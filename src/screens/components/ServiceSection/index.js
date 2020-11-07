@@ -35,9 +35,6 @@ const useStyles = makeStyles((theme) => ({
 		fontWeight: "bold",
 		// borderBottom: "5px solid red",
 	},
-	indicator: {
-		color: "blue",
-	},
 }));
 
 function a11yProps(index) {
@@ -57,13 +54,17 @@ export const ServiceSection = () => {
 
 	const Item = ({ title, text }) => {
 		return (
-			<div className="w-1/2">
-				<h2 className="text-4xl font-semibold my-3">Indiviual</h2>
-				<p className="text-gray-500 ">
-					Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores sequi
-					laborum quos at ex iure veniam sed ipsum corporis eius?
-				</p>
+			<div className="my-4">
+				<h2 className="text-4xl font-semibold my-3">{title}</h2>
+				<p className="text-gray-500 ">{text}</p>
 			</div>
+		);
+	};
+	const Button = ({ text, href }) => {
+		return (
+			<button className="font-semibold bg-red-800 text-white py-16 px-15 ">
+				<a href={href}>{text}</a>
+			</button>
 		);
 	};
 	return (
@@ -79,7 +80,7 @@ export const ServiceSection = () => {
 					itaque!
 				</p>
 			</div>
-			<div className="w-11/12 sm:w-8/12 m-auto">
+			<div className="w-11/12 sm:w-10/12 m-auto">
 				<div>
 					<AppBar position="static">
 						<Tabs
@@ -98,16 +99,60 @@ export const ServiceSection = () => {
 						</Tabs>
 					</AppBar>
 					<TabPanel value={value} index={0}>
-						<div>
-							<div>
+						<div className="grid grid-cols-3 gap-12 my-24">
+							<div className="col-start-1 col-end-2">
 								<ul>
 									<li className="flex flex-col ">
-										<Item />
-										<Item />
-										<Item />
-										<Item />
+										<Item
+											title="Indiviual"
+											text=" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consectetur id inventore blanditiis iste nemo optio soluta perferendis culpa ipsum laborum ullam veniam accusantium ipsa, magnam, odio cupiditate nisi expedita!"
+										/>
+										<Item
+											title="Leader ship"
+											text=" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consectetur id inventore blanditiis iste nemo optio soluta perferendis culpa ipsum laborum ullam veniam accusantium ipsa, magnam, odio cupiditate nisi expedita!"
+										/>
+										<Item
+											title="Team"
+											text=" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consectetur id inventore blanditiis iste nemo optio soluta perferendis culpa ipsum laborum ullam veniam accusantium ipsa, magnam, odio cupiditate nisi expedita!"
+										/>
+										<Item
+											title="System"
+											text=" Lorem, ipsum dolor sit amet consectetur adipisicing elit. Rerum consectetur id inventore blanditiis iste nemo optio soluta perferendis culpa ipsum laborum ullam veniam accusantium ipsa, magnam, odio cupiditate nisi expedita!"
+										/>
 									</li>
 								</ul>
+							</div>
+							<div className="col-start-2 col-end-4">
+								<img
+									src="https://cdn.onlinewebfonts.com/svg/img_462266.png"
+									alt="analysis"
+									class="py-8 w-24 "
+								/>
+								<h2 className="text-4xl font-semibold my-8">Indiviual</h2>
+								<p className="text-gray-500 my-4">
+									Lorem ipsum dolor sit amet consectetur adipisicing elit. Sint
+									doloremque sed consequatur ad rerum quod error maiores
+									dignissimos id aspernatur quam explicabo dolores repellendus,
+									soluta excepturi culpa aut vel provident est iure ab veritatis
+									molestiae! Rerum provident maiores tempora sapiente!
+								</p>
+								<p className="text-gray-500 my-4">
+									Lorem ipsum dolor sit amet consectetur, adipisicing elit.
+									Iusto voluptatibus laboriosam, temporibus corrupti, culpa
+									aspernatur ducimus excepturi libero accusamus dignissimos id
+									tenetur quis quam quaerat impedit dicta, adipisci minima amet
+									repellat beatae tempore! Odit, dolorum. Itaque magnam et
+									aperiam autem.
+								</p>
+								<div className="grid grid-cols-5 gap-4  mt-16">
+									<Button href="/" text="Pay" className="mr-4" />
+									<Button href="/" text="Engagment" className="mr-4" />
+									<Button href="/" text="Assessment" className="mr-4" />
+									<Button href="/" text="Pay" className="mr-4" />
+								</div>
+								<a href="/" className=" my-8 text-red-800 tracking-wide block">
+									View Programs
+								</a>
 							</div>
 						</div>
 					</TabPanel>
